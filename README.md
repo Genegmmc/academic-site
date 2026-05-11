@@ -1,28 +1,44 @@
-# Genesis Academic Site
+# Academic GitHub Pages Site
 
-This is a simplified academic GitHub Pages website for **Genesis M. Mendoza Celorio**.
+This is a simple one-page academic website for GitHub Pages.
 
-## Included
-- `index.html`
-- `assets/profile.jpg` (your uploaded photo is already included)
-- `files/` folder for your CV
+## Files
 
-## How to publish on GitHub Pages
-1. Create a repository named:
-   `YOUR-USERNAME.github.io`
-2. Upload all files from this folder.
-3. Go to **Settings > Pages**.
-4. Under **Build and deployment**, choose:
+- `index.html` — the full website.
+- `assets/profile.jpg` — optional portrait image. Create the folder `assets` and place your image there.
+- `files/CV.pdf` — optional CV file. Create the folder `files` and place your CV there.
+
+## How to publish
+
+1. Create a GitHub repository named:
+
+   ```text
+   YOUR-GITHUB-USERNAME.github.io
+   ```
+
+2. Upload `index.html`.
+3. Optional: upload `assets/profile.jpg` and `files/CV.pdf`.
+4. Go to **Settings → Pages**.
+5. Under **Build and deployment**, select:
    - Source: `Deploy from a branch`
    - Branch: `main`
    - Folder: `/ (root)`
-5. Save.
+6. Save.
 
-## What to edit
-Open `index.html` and replace:
-- `your.email@example.com`
-- the short bio text
-- the research text
-- add your CV as `files/CV.pdf`
+Your website should appear at:
 
-Your photo is already embedded in the site.
+```text
+https://YOUR-GITHUB-USERNAME.github.io
+```
+
+## What to edit first
+
+Search in `index.html` for:
+
+- `Gene`
+- `your.email@uantwerpen.be`
+- `your-username`
+- `your-profile`
+- `#`
+
+Replace those placeholders with your real data.

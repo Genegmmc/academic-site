@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Genesis M. Mendoza Celorio | Academic Website</title>
+  <meta name="description" content="Academic website of Genesis M. Mendoza Celorio." />
+  <meta name="author" content="Genesis M. Mendoza Celorio" />
+  <style>
+    :root {
+      --bg: #f6f8fc;
+      --card: #ffffff;
+      --text: #162033;
+      --muted: #677489;
+      --line: #e7ebf1;
+      --accent: #2347a6;
+      --accent-soft: #eef3ff;
+      --shadow: 0 18px 40px rgba(12, 24, 54, 0.08);
+      --radius: 24px;
+      --max: 1080px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(35, 71, 166, 0.10), transparent 28rem),
+        radial-gradient(circle at top right, rgba(35, 71, 166, 0.06), transparent 24rem),
+        var(--bg);
+      line-height: 1.6;
+    }
+    a { text-decoration: none; color: inherit; }
+    .container { width: min(var(--max), calc(100% - 32px)); margin: 0 auto; }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(10px);
+      background: rgba(246, 248, 252, 0.86);
+      border-bottom: 1px solid rgba(231, 235, 241, 0.95);
+    }
+    .nav {
+      min-height: 72px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+    .brand { font-weight: 800; letter-spacing: -0.03em; }
+    .brand span { color: var(--accent); }
+    .nav-links { display: flex; flex-wrap: wrap; gap: 10px; color: var(--muted); font-weight: 600; font-size: 0.95rem; }
+    .nav-links a { padding: 8px 12px; border-radius: 999px; }
+    .nav-links a:hover { background: var(--accent-soft); color: var(--accent); }
+    .hero { padding: 64px 0 40px; }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 34px;
+      align-items: center;
+    }
+    .photo-card, .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .photo-card { padding: 14px; }
+    .photo {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: 18px;
+      display: block;
+      border: 1px solid var(--line);
+    }
+    .eyebrow {
+      display: inline-block;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 0.88rem;
+      font-weight: 800;
+      margin-bottom: 14px;
+    }
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(2.4rem, 6vw, 4.6rem);
+      line-height: 0.98;
+      letter-spacing: -0.06em;
+    }
+    .lead {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.06rem;
+      max-width: 650px;
+    }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 18px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: var(--card);
+      font-weight: 800;
+      box-shadow: 0 10px 24px rgba(18, 32, 62, 0.06);
+    }
+    .btn.primary { background: var(--text); color: white; border-color: var(--text); }
+    .mini {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 24px;
+    }
+    .mini div {
+      background: rgba(255,255,255,0.7);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 14px;
+    }
+    .mini span { display: block; color: var(--muted); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 800; }
+    .mini strong { display: block; margin-top: 4px; font-size: 0.98rem; }
+    section { padding: 28px 0; }
+    .section-title { margin: 0 0 16px; font-size: clamp(1.6rem, 4vw, 2.4rem); letter-spacing: -0.05em; }
+    .grid { display: grid; gap: 18px; }
+    .grid.two { grid-template-columns: repeat(2, 1fr); }
+    .card { padding: 24px; }
+    .card h3 { margin: 0 0 8px; font-size: 1.12rem; letter-spacing: -0.02em; }
+    .card p { margin: 0; color: var(--muted); }
+    .list { margin: 12px 0 0; padding-left: 18px; color: var(--muted); }
+    .contact-box {
+      background: var(--text);
+      color: white;
+      border-radius: calc(var(--radius) + 4px);
+      padding: 30px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      box-shadow: var(--shadow);
+    }
+    .contact-box p { margin: 8px 0 0; color: rgba(255,255,255,0.78); }
+    .contact-box .btn { background: white; color: var(--text); border-color: white; box-shadow: none; }
+    footer { padding: 28px 0 40px; text-align: center; color: var(--muted); font-size: 0.92rem; }
+    @media (max-width: 860px) {
+      .hero-grid, .grid.two, .mini { grid-template-columns: 1fr; }
+      .nav { flex-direction: column; align-items: flex-start; padding: 14px 0; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="container nav">
+      <a href="#top" class="brand">Genesis<span>.</span></a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="photo-card">
+          <img class="photo" src="assets/profile.jpg" alt="Portrait of Genesis M. Mendoza Celorio" />
+        </div>
+
+        <div>
+          <div class="eyebrow">Academic Website</div>
+          <h1>Genesis M. Mendoza Celorio</h1>
+          <p class="lead">
+            Welcome to my academic page. This website presents a short overview of my profile, research interests, and academic work.
+          </p>
+          <div class="actions">
+            <a class="btn primary" href="mailto:your.email@example.com">Email me</a>
+            <a class="btn" href="files/CV.pdf" target="_blank" rel="noreferrer">Download CV</a>
+          </div>
+          <div class="mini">
+            <div>
+              <span>Role</span>
+              <strong>Research Student</strong>
+            </div>
+            <div>
+              <span>Field</span>
+              <strong>Biomedical Optics</strong>
+            </div>
+            <div>
+              <span>Focus</span>
+              <strong>Imaging & Research</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <h2 class="section-title">About</h2>
+        <div class="grid two">
+          <article class="card">
+            <h3>Short bio</h3>
+            <p>
+              I am building my academic profile in imaging, optics, and research. This is a simplified website that you can easily expand later with more details.
+            </p>
+          </article>
+          <article class="card">
+            <h3>You can edit this later</h3>
+            <p>
+              Replace this text with your institution, current position, academic background, and a short summary of your interests.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="research">
+      <div class="container">
+        <h2 class="section-title">Research</h2>
+        <div class="grid two">
+          <article class="card">
+            <h3>Research interests</h3>
+            <ul class="list">
+              <li>Optical coherence tomography (OCT)</li>
+              <li>Biomedical imaging</li>
+              <li>Optical sensing</li>
+              <li>Experimental research</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Current note</h3>
+            <p>
+              Add your current project here. You can keep it short and update it whenever you want as your academic profile grows.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="contact-box">
+          <div>
+            <h2 class="section-title" style="color:white; margin-bottom:0;">Contact</h2>
+            <p>Replace the email and links with your own information.</p>
+          </div>
+          <a class="btn" href="mailto:your.email@example.com">your.email@example.com</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Genesis M. Mendoza Celorio
+  </footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
